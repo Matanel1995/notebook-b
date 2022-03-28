@@ -15,24 +15,9 @@ HEADERS=$(wildcard $(SOURCE_PATH)/*.hpp)
 OBJECTS=$(subst sources/,objects/,$(subst .cpp,.o,$(SOURCES)))
 
 run: test
-<<<<<<< Updated upstream
 
 test: TestRunner.o StudentTest1.o StudentTest2.o StudentTest3.o $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
-=======
-	./$^
-
-test: TestRunner.o StudentTest1.o StudentTest2.o StudentTest3.o $(OBJECTS) $(OBJECTS)
-	$(CXX) $(CXXFLAGS) $^ -o test	
-# test1: TestRunner.o StudentTest1.o  $(OBJECTS)
-# 	$(CXX) $(CXXFLAGS) $^ -o $@
-
-# test2: TestRunner.o StudentTest2.o  $(OBJECTS)
-# 	$(CXX) $(CXXFLAGS) $^ -o $@
-
-# test3: TestRunner.o StudentTest3.o  $(OBJECTS)
-# 	$(CXX) $(CXXFLAGS) $^ -o $@
->>>>>>> Stashed changes
 
 %.o: %.cpp $(HEADERS)
 	$(CXX) $(CXXFLAGS) --compile $< -o $@
